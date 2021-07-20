@@ -9,8 +9,9 @@ const CounterScreen = () => {
       <Button
         title="Increase"
         onPress={() => {
-          // Don't do this
+          // Don't do this!
           // counter++
+          // counter = counter + 1; this is bad implementation!
           setCounter(counter + 1)
         }}
       />
