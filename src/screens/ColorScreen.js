@@ -1,10 +1,21 @@
-import React from "react"
+import React, { useState } from "react"
 import { View, StyleSheet, Button } from "react-native"
 
 const ColorScreen = () => {
+  const [colors, setColors] = useState([])
+  console.log(colors)
+
   return (
     <View>
-      <Button title="Add a Color" />
+      <Button
+        title="Add a Color"
+        onPress={() => {
+          // bad implementation
+          // colors.push(randomRgb()) // since this will modify the existing element inside the array instead of add a new one
+          // good implementation
+          setColors([...colors, randomRgb()])
+        }}
+      />
       <View style={{ height: 100, width: 100, backgroundColor: randomRgb() }} />
     </View>
   )
